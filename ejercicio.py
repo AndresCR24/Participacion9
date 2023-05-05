@@ -12,7 +12,7 @@ class PatternMatcher:
         pattern = pattern.replace('*', '.*')
         matching_strings = []
         for string in strings:
-            if re.match(pattern,string):
+            if re.search(pattern,string):
                 matching_strings.append(string)
                 
         return matching_strings
@@ -21,7 +21,7 @@ class PatternMatcher:
 # Ejemplo de uso:
 
 matcher = PatternMatcher()
-strings = ["gato", "perro", "caballo", "gorila", "gaviota", "ardilla"]
+strings = ["gato", "perro", "caballo", "gorila", "gaviota", "argdilla"]
 strings_2 = ["carro", "casa", "cementerio", "papa", "mama", "oso"]
 pattern = "g*a"
 pattern2 = "c*o"
