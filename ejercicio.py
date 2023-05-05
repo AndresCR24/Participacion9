@@ -9,7 +9,7 @@ class PatternMatcher:
         elif not all(isinstance(string, str) for string in strings): 
             raise TypeError ("Solo puede contener strings")
         
-        pattern = pattern.replace('*', '.*')
+        #pattern = pattern.replace('*', '.*')
         matching_strings = []
         for string in strings:
             if re.search(pattern,string):
@@ -23,8 +23,8 @@ class PatternMatcher:
 matcher = PatternMatcher()
 strings = ["gato", "perro", "caballo", "gorila", "gaviota", "argdilla"]
 strings_2 = ["carro", "casa", "cementerio", "papa", "mama", "oso"]
-pattern = "g*a"
-pattern2 = "c*o"
+pattern = "g.*a"
+pattern2 = "c.*o"
 matching_strings = matcher.match(strings, pattern)
 matching_strings_2 = matcher.match(strings_2, pattern2)
 
